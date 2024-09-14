@@ -21,15 +21,20 @@
 \setbeamertemplate{background}
 {\transparent{0.05}
 
-\includegraphics[width=1.0\paperwidth, height=1.0\paperheight]{escudo_fciencias.png} }
+\includegraphics[width=\paperwidth,,height=\paperheight,keepaspectratio \paperheight]{escudo_fciencias.png} }
 
 \begin{document}
 
 \begin{frame}[plain] 
 \titlepage
 \begin{center}
-\includegraphics[scale=0.2]{Downloads/logo_unam.jpg} 
-  \hspace{8cm}]{\includegraphics[scale=0.04]{Downloads/escudo_fciencias.png} }    
+\begin{minipage}{0.45\textwidth}
+    \includegraphics[width=0.5\textwidth, keepaspectratio]{logo_unam.jpg}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.45\textwidth}
+    \includegraphics[width=0.5\textwidth, keepaspectratio]{escudo_fciencias.png}
+\end{minipage}
 \end{center}
 \end{frame}
 

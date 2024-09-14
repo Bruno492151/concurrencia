@@ -1,0 +1,4 @@
+\babel@toc {spanish}{}\relax 
+\beamer@sectionintoc {1}{Introducción }{3}{0}{1}
+\beamer@sectionintoc {2}{Comparacion entre las distancias programaciones}{7}{0}{2}
+\beamer@sectionintoc {3}{Fundamentos de la Programación Concurrente}{14}{0}{3}
