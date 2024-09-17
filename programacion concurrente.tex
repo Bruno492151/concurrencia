@@ -97,21 +97,103 @@
 \end{frame}
 
 
-\section{Fundamentos de la Programación Concurrente}
+\section{Técnicas y Modelos de Programación Concurrente}
+\begin{frame}{Técnicas y Modelos de Programación Concurrente}
 
-\begin{frame}{Fundamentos de la Programación Concurrente}
-  \begin{block}{Fundamentos}
+    La programación concurrente implica coordinar la ejecución de múltiples hilos o procesos para realizar tareas en paralelo, mejorando así la eficiencia y el rendimiento del sistema. Las técnicas y modelos de programación concurrente proporcionan mecanismos para manejar problemas como la sincronización, la comunicación entre hilos y la protección de los recursos compartidos.
+
+A continuación, se profundiza en algunas de estas técnicas clave: mutex, semáforos, comunicación entre hilos y los modelos de programación más comunes.
+\end{frame}
+
+
+\subsection{Mutex (Exclusión Mutua)}
+\begin{frame}{Mutex (Exclusión Mutua)}
+
+\begin{block}
     \begin{enumerate}
-         \item \textbf{Concepto de Hilos}:
-            Los hilos son unidades de ejecución dentro de un proceso que permiten la ejecución simultánea de partes de un programa. Comparten el mismo espacio de memoria, facilitando la comunicación entre ellos.
-        \item \textbf{Procesos vs Hilos}:
-            \textbf{Procesos}: Tienen espacio de memoria propio y la comunicación entre procesos puede ser costosa.
-            \textbf{Hilos}: Comparten memoria dentro de un proceso, lo que facilita la comunicación, pero puede complicar la sincronización.
-        \item \textbf{Multitarea}:
-            Capacidad de un sistema operativo para ejecutar múltiples tareas simultáneamente, ya sea con múltiples hilos dentro de un proceso o con varios procesos.
+        \item \textbf{Definición:} Mecanismo de sincronización que garantiza que solo un hilo pueda acceder a un recurso compartido en un momento dado. \pause
+        \item \textbf{Funcionamiento:} Un hilo adquiere el mutex antes de acceder al recurso y lo libera al terminar. \pause
+        \item Ejemplo: 
     \end{enumerate}
-  \end{block}
-  \end{frame}
+\end{block}
+\end{frame}
+
+
+
+\subsection{Semáforos}
+\begin{frame}{Semáforos}
+
+\begin{block}   
+    \begin{enumerate}
+        \item \textbf{Definición:} Variable entera que se utiliza para controlar el acceso a recursos compartidos. \pause
+        \item \textbf{Operaciones:} wait (P) y signal (V).
+        \begin{enumerate}
+            \item \textbf{Wait (P):} Decrementa el contador del semáforo.
+            \item \textbf{ignal (V):} Incrementa el contador del semáforo.
+        \end{enumerate}\pause
+        \item \textbf{Tipos:} Semáforos binarios y contadores.
+        \begin{enumerate}
+            \item \textbf{Semáforo Binario:} Funciona de manera similar a un mutex, permitiendo que solo un hilo acceda a la sección crítica a la vez.
+            \item \textbf{Semáforo Contador:} Permite que un número específico de hilos accedan a la sección crítica simultáneamente. Esto es útil, por ejemplo, para limitar el número de conexiones a un servidor.
+        \end{enumerate}
+        \item ejemplo:
+    \end{enumerate}
+\end{block}
+\end{frame}
+
+
+        
+\subsection{Comunicación entre Hilos}
+\begin{frame}{Comunicación entre Hilos}
+
+\begin{block}
+    
+    \begin{enumerate}
+        \item \textbf{Definición:} Estos mecanismos permiten a los hilos intercambiar datos y sincronizar sus operaciones. Se puede lograr a través de mecanismos como colas, señales, variables de condición, y monitores. \pause
+        \item \textbf{Mecanismos:}
+        \begin{enumerate}
+            \item \textbf{Variables de Condición:} Son objetos de sincronización que permiten que un hilo espere (se bloquee) hasta que otra parte del código lo despierte (notifique). 
+            \item \textbf{Colas (Queues):} Las colas permiten que los hilos pasen datos de manera segura entre sí. Un hilo puede poner un dato en la cola, y otro hilo puede tomar el dato de la cola.
+        \end{enumerate}\pause
+        \item Ejemplo: 
+    \end{enumerate}
+\end{block}
+\end{frame}
+
+
+
+\subsection{Modelos de Programación Concurrente}
+\begin{frame}{Modelos de Programación Concurrente}
+
+\begin{block}
+
+    Existen varios modelos de programación concurrente que definen cómo se estructuran y gestionan los hilos y procesos:
+
+    \begin{enumerate}
+        \item \textbf{Modelo de Hilos (Thread Model):} Los hilos se utilizan para la concurrencia. Los hilos comparten el mismo espacio de memoria, lo que facilita la comunicación entre ellos, pero también introduce la necesidad de sincronización. \pause
+        \item \textbf{Uso común:} Aplicaciones en tiempo real, videojuegos y sistemas operativos. 
+    \end{enumerate}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}{Modelos de Programación Concurrente}
+
+\begin{block}
+
+    \begin{enumerate}
+        \item \textbf{Modelo de Actores (Actor Model):} En este modelo, cada actor es un objeto autónomo que procesa mensajes de forma asíncrona. Los actores no comparten memoria y se comunican mediante el paso de mensajes.\pause
+        \item \textbf{Modelo de Pasaje de Mensajes (Message Passing Model):} Utilizado en sistemas distribuidos y aplicaciones paralelas. Los procesos se comunican entre sí mediante el envío y la recepción de mensajes.\pause
+        \item \textbf{Modelo de Memoria Compartida (Shared Memory Model):} Los hilos o procesos comparten un mismo espacio de memoria. 
+
+    \end{enumerate}
+\end{block}
+\end{frame}
+
+
+
+
 \end{document}
 
 
